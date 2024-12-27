@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Pallete {
+  static const Color onboardDots = Colors.grey;
+  static const Color button = Colors.blue;
   static const Color mainFontColor = Color.fromRGBO(19, 61, 95, 1);
   static const Color firstSuggestionBoxColor = Color.fromRGBO(165, 231, 244, 1);
   static const Color secondSuggestionBoxColor =
