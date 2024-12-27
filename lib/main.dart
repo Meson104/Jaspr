@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:jaspr/home_page.dart';
-import 'package:jaspr/pallete.dart';
+import 'package:flutter/services.dart';
 
-void main() {
+import 'package:jaspr/pallete.dart';
+import 'package:jaspr/screens/splash_screen.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+  await SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+
   runApp(const MyApp());
 }
 
@@ -15,10 +22,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Jaspr',
       theme: ThemeData.light(useMaterial3: true).copyWith(
+          textTheme: TextTheme(
+              titleMedium: TextStyle(
+            fontFamily: 'Cera-Pro',
+            fontSize: 20,
+          )),
           scaffoldBackgroundColor: Pallete.whiteColor,
           appBarTheme: AppBarTheme(backgroundColor: Pallete.whiteColor)),
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: SplashScreen(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jaspr/helper/global_constants.dart';
 import 'package:lottie/lottie.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,6 +12,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    mq = MediaQuery.sizeOf(context);
     return Scaffold(
       appBar: AppBar(
         title: Text('Jaspr'),
