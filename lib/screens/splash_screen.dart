@@ -46,7 +46,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             Text(
               'Jaspr',
-              style: TextStyle(fontSize: 16),
+              style: TextStyle(fontFamily: 'Cera-Pro', fontSize: 16),
             ),
             Spacer()
           ],

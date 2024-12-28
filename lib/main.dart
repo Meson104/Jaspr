@@ -22,11 +22,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Jaspr',
       theme: ThemeData.light(useMaterial3: true).copyWith(
-          textTheme: TextTheme(
-              titleMedium: TextStyle(
-            fontFamily: 'Cera-Pro',
-            fontSize: 20,
-          )),
           scaffoldBackgroundColor: Pallete.whiteColor,
           appBarTheme: AppBarTheme(backgroundColor: Pallete.whiteColor)),
       debugShowCheckedModeBanner: false,
