@@ -16,26 +16,17 @@ class OnboardingScreen extends StatelessWidget {
           title: 'Greetings, I am Jaspr',
           subtitle:
               'J.A.S.P.R. Just Another System for Pretrained Responses. As of today I\'m capable of serving you with textual and pictoral responses. Would be at your service!',
-          lottie:
-              'https://lottie.host/20dc4179-6b64-4c8b-bb5c-3d5e0b073756/Nc9reIJhUu.json'),
+          lottie: 'assets/lottie/jaspr.json'),
       Onboard(
           title: 'Ask Me Anything',
           subtitle:
               'We can have casual conversations. Perhaps an idea on your mind or a subject of your interests. Ask me a question and I\'ll be glad to answer that!',
-          lottie:
-              'https://lottie.host/e23938ee-049b-4ced-a831-d97dcbacf46d/v6aDbl0pMN.json'),
+          lottie: 'assets/lottie/ai_talk.json'),
       Onboard(
           title: 'I\'m literally all ears!',
           subtitle:
               'Send queries using your voice. Tap the voice button and I\'ll be listening as you speak',
-          lottie:
-              'https://lottie.host/3ac9a32f-51f6-4397-a6fd-0516ecd92d5b/q318Ttdby2.json'),
-      Onboard(
-          title: 'APIs at Play',
-          subtitle:
-              'At core I am a one stop solution for AI services. The responses to your queries are fetched from Pretrained Models.',
-          lottie:
-              'https://lottie.host/0eb1e136-2e56-4647-a8fd-5bbb79a39341/acsbFyUHg7.json')
+          lottie: 'assets/lottie/voice.json'),
     ];
     mq = MediaQuery.sizeOf(context);
     return Scaffold(
@@ -48,7 +39,7 @@ class OnboardingScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Spacer(),
-                Lottie.network(list[index].lottie, width: mq.width * .6),
+                Lottie.asset(list[index].lottie, width: mq.width * .6),
                 Text(
                   list[index].title,
                   style: TextStyle(

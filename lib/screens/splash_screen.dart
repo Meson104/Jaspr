@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jaspr/helper/global_constants.dart';
 import 'package:jaspr/pallete.dart';
-import 'package:jaspr/screens/home_page.dart';
 import 'package:jaspr/screens/onboarding_screen.dart';
 import 'package:lottie/lottie.dart';
 
@@ -49,9 +48,6 @@ class _SplashScreenState extends State<SplashScreen> {
               'Jaspr',
               style: TextStyle(fontSize: 16),
             ),
-            Lottie.network(
-                'https://lottie.host/f9889007-d634-4032-aa77-d5bbf060ebe8/CyR8mpDwgG.json',
-                width: 200),
             Spacer()
           ],
         ),

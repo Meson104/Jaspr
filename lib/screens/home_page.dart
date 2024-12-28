@@ -26,8 +26,7 @@ class _HomePageState extends State<HomePage> {
               height: 150,
               width: 150,
               margin: EdgeInsets.only(top: 4),
-              child: Lottie.network(
-                  'https://lottie.host/20dc4179-6b64-4c8b-bb5c-3d5e0b073756/Nc9reIJhUu.json'),
+              child: Lottie.asset('assets/lottie/jaspr.json'),
             ),
           ),
         ],
