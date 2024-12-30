@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:jaspr/pallete.dart';
+import 'package:jaspr/screens/home_page.dart';
 import 'package:jaspr/screens/splash_screen.dart';
 
 Future<void> main() async {

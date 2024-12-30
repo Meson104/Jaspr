@@ -42,11 +42,11 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
             ),
             const SizedBox(
-              height: 10,
+              height: 20,
             ),
             Text(
               'Jaspr',
-              style: TextStyle(fontFamily: 'Cera-Pro', fontSize: 16),
+              style: TextStyle(fontFamily: 'Exo2', fontSize: 16),
             ),
             Spacer()
           ],

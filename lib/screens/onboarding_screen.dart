@@ -42,13 +42,11 @@ class OnboardingScreen extends StatelessWidget {
                   flex: 2,
                 ),
                 Lottie.asset(list[index].lottie, width: mq.width * .6),
-                const SizedBox(
-                  height: 10,
-                ),
+                const Spacer(),
                 Text(
                   list[index].title,
                   style: TextStyle(
-                      fontFamily: 'Cera-Pro',
+                      fontFamily: 'Exo2',
                       fontSize: 16,
                       fontWeight: FontWeight.w900,
                       letterSpacing: .5),
@@ -61,9 +59,7 @@ class OnboardingScreen extends StatelessWidget {
                   child: Text(
                     list[index].subtitle,
                     style: TextStyle(
-                        fontFamily: 'Cera-Pro',
-                        fontSize: 12,
-                        letterSpacing: .5),
+                        fontFamily: 'Exo2', fontSize: 12, letterSpacing: .5),
                   ),
                 ),
                 Spacer(),
