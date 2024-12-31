@@ -11,4 +11,7 @@ class Pallete {
   static const Color borderColor = Color.fromRGBO(200, 200, 200, 1);
   static const Color blackColor = Colors.black;
   static const Color whiteColor = Colors.white;
+  static const Color inputHintColor = Color.fromARGB(105, 0, 0, 0);
+  static const Color inputBgColor = Color.fromARGB(255, 224, 224, 224);
+  static const Color inputIconColor = Color.fromARGB(255, 158, 158, 158);
 }

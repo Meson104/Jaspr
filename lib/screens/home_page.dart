@@ -66,8 +66,8 @@ class _HomePageState extends State<HomePage> {
                               contentPadding: EdgeInsets.all(10),
                               hintText: 'Search anything...',
                               border: InputBorder.none,
-                              hintStyle: TextStyle(
-                                  color: Color.fromARGB(105, 0, 0, 0)),
+                              hintStyle:
+                                  TextStyle(color: Pallete.inputHintColor),
                             ),
                             style: TextStyle(
                                 color: const Color.fromARGB(211, 0, 0, 0)),
@@ -77,6 +77,7 @@ class _HomePageState extends State<HomePage> {
                           icon: Icon(Icons.arrow_forward,
                               color: Colors.grey[500]),
                           onPressed: () {
+                            
                             // Send message action
                           },
                         ),
@@ -88,9 +89,9 @@ class _HomePageState extends State<HomePage> {
                 // Voice Command Button
                 CircleAvatar(
                   radius: 25,
-                  backgroundColor: Colors.grey[300],
+                  backgroundColor: Pallete.inputBgColor,
                   child: IconButton(
-                    icon: Icon(Icons.mic, color: Colors.grey[500]),
+                    icon: Icon(Icons.mic, color: Pallete.inputIconColor),
                     onPressed: () {
                       // Voice command action
                     },

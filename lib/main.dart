@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: Pallete.whiteColor,
           appBarTheme: AppBarTheme(backgroundColor: Pallete.whiteColor)),
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: HomePage(),
     );
   }
 }
