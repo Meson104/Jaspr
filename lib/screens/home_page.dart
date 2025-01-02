@@ -50,7 +50,6 @@ class _HomePageState extends State<HomePage> {
             padding: EdgeInsets.symmetric(horizontal: 10),
             child: Row(
               children: [
-                // Text Field with Send Button
                 Expanded(
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 15),
@@ -77,7 +76,6 @@ class _HomePageState extends State<HomePage> {
                           icon: Icon(Icons.arrow_forward,
                               color: Colors.grey[500]),
                           onPressed: () {
-                            
                             // Send message action
                           },
                         ),
