@@ -1,3 +1,4 @@
 {
-    "editor.cursorStyle": "line-thin"
+    "editor.cursorStyle": "line-thin",
+    "cmake.ignoreCMakeListsMissing": true
 }

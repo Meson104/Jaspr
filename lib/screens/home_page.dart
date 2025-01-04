@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jaspr/helper/global_constants.dart';
 import 'package:jaspr/pallete.dart';
+import 'package:jaspr/services/chat_service.dart';
 import 'package:lottie/lottie.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,6 +12,21 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  String fullResponse = "";
+  final queryController = TextEditingController();
+
+  @override
+  void dispose() {
+    super.dispose();
+    queryController.dispose();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    ChatService().connect();
+  }
+
   @override
   Widget build(BuildContext context) {
     mq = MediaQuery.sizeOf(context);
@@ -45,6 +61,17 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           const Spacer(),
+          StreamBuilder(
+              stream: ChatService().contentStream,
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+                fullResponse += snapshot.data?["data"] ?? '';
+                return Text(fullResponse);
+              }),
           Container(
             margin: EdgeInsets.only(bottom: 20),
             padding: EdgeInsets.symmetric(horizontal: 10),
@@ -61,6 +88,7 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         Expanded(
                           child: TextField(
+                            controller: queryController,
                             decoration: InputDecoration(
                               contentPadding: EdgeInsets.all(10),
                               hintText: 'Search anything...',
@@ -72,13 +100,12 @@ class _HomePageState extends State<HomePage> {
                                 color: const Color.fromARGB(211, 0, 0, 0)),
                           ),
                         ),
-                        IconButton(
-                          icon: Icon(Icons.arrow_forward,
-                              color: Colors.grey[500]),
-                          onPressed: () {
-                            // Send message action
-                          },
-                        ),
+                        GestureDetector(
+                            onTap: () {
+                              ChatService().chat(queryController.text.trim());
+                            },
+                            child: Icon(Icons.arrow_forward,
+                                color: Colors.grey[500])),
                       ],
                     ),
                   ),
