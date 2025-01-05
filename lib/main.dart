@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:jaspr/pallete.dart';
+import 'package:jaspr/screens/chat_screen.dart';
 import 'package:jaspr/screens/home_page.dart';
 import 'package:jaspr/screens/splash_screen.dart';
 
@@ -26,7 +27,9 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: Pallete.whiteColor,
           appBarTheme: AppBarTheme(backgroundColor: Pallete.whiteColor)),
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: ChatScreen(
+        question: 'Who is Krshn?',
+      ),
     );
   }
 }

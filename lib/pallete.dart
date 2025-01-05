@@ -14,4 +14,5 @@ class Pallete {
   static const Color inputHintColor = Color.fromARGB(105, 0, 0, 0);
   static const Color inputBgColor = Color.fromARGB(255, 224, 224, 224);
   static const Color inputIconColor = Color.fromARGB(255, 158, 158, 158);
+  static const Color boldcolor = Color.fromARGB(204, 54, 52, 52);
 }
