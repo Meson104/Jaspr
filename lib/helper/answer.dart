@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:jaspr/pallete.dart';
+import 'package:jaspr/services/chat_service.dart';
 
 class Answer extends StatefulWidget {
   const Answer({super.key});
@@ -9,6 +11,18 @@ class Answer extends StatefulWidget {
 }
 
 class _AnswerState extends State<Answer> {
+  String fullResponse = '';
+
+  @override
+  void initState() {
+    super.initState();
+    ChatService().contentStream.listen((data) {
+      setState(() {
+        fullResponse += data["data"];
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -27,10 +41,20 @@ class _AnswerState extends State<Answer> {
               style: TextStyle(
                 fontFamily: 'Exo2',
                 fontWeight: FontWeight.w500,
-                fontSize: 18,
+                fontSize: 20,
               ),
             ),
           ],
+        ),
+        Markdown(
+          data: fullResponse,
+          shrinkWrap: true,
+          styleSheet: MarkdownStyleSheet.fromTheme(Theme.of(context)).copyWith(
+              codeblockDecoration: BoxDecoration(
+                color: Pallete.firstSuggestionBoxColor,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              code: const TextStyle(fontSize: 16)),
         )
       ],
     );

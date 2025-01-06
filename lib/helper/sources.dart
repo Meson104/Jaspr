@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jaspr/pallete.dart';
+import 'package:jaspr/services/chat_service.dart';
 
 class Sources extends StatefulWidget {
   const Sources({super.key});
@@ -9,20 +10,17 @@ class Sources extends StatefulWidget {
 }
 
 class _SourcesState extends State<Sources> {
-  List<Map<String, dynamic>> _searchResults = [
-    {
-      'title': 'Krishna , the Supreme Personality of Godhead',
-      'url': 'https://www.vrindavantimes/supreme/'
-    },
-    {
-      'title': 'Krishna , the Perfect Statesman',
-      'url': 'https://www.dwarkatimes.com/trade/commerce'
-    },
-    {
-      'title': 'Krishna , the Lord of the Universe',
-      'url': 'https://www.vrindavantimes/supreme/'
-    },
-  ];
+  List searchResults = [];
+  @override
+  void initState() {
+    super.initState();
+    ChatService().searchResultStream.listen((data) {
+      setState(() {
+        searchResults = (data["data"]);
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -42,7 +40,7 @@ class _SourcesState extends State<Sources> {
                 'Sources',
                 style: TextStyle(
                   fontFamily: 'Exo2',
-                  fontSize: 18,
+                  fontSize: 20,
                   fontWeight: FontWeight.w500,
                 ),
               )
@@ -53,7 +51,7 @@ class _SourcesState extends State<Sources> {
             spacing: 16,
             runSpacing: 16,
             runAlignment: WrapAlignment.start,
-            children: _searchResults.map((res) {
+            children: searchResults.map((res) {
               return Container(
                 padding: EdgeInsets.all(16),
                 width: 140,

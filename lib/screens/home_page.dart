@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jaspr/helper/global_constants.dart';
 import 'package:jaspr/pallete.dart';
+import 'package:jaspr/screens/chat_screen.dart';
 import 'package:jaspr/services/chat_service.dart';
 import 'package:lottie/lottie.dart';
 
@@ -61,17 +62,16 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           const Spacer(),
-          StreamBuilder(
-              stream: ChatService().contentStream,
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return const Center(
-                    child: CircularProgressIndicator(),
-                  );
-                }
-                fullResponse += snapshot.data?["data"] ?? '';
-                return Text(fullResponse);
-              }),
+          // StreamBuilder(
+          //     stream: ChatService().contentStream,
+          //     builder: (context, snapshot) {
+          //       if (snapshot.connectionState == ConnectionState.waiting) {
+          //         return const Center(
+          //           child: CircularProgressIndicator(),
+          //         );
+          //       }
+
+          //     }),
           Container(
             margin: EdgeInsets.only(bottom: 20),
             padding: EdgeInsets.symmetric(horizontal: 10),
@@ -103,6 +103,9 @@ class _HomePageState extends State<HomePage> {
                         GestureDetector(
                             onTap: () {
                               ChatService().chat(queryController.text.trim());
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => ChatScreen(
+                                      question: queryController.text.trim())));
                             },
                             child: Icon(Icons.arrow_forward,
                                 color: Colors.grey[500])),
