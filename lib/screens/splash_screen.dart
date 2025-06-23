@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:jaspr/helper/global_constants.dart';
 import 'package:jaspr/pallete.dart';
 import 'package:jaspr/screens/onboarding_screen.dart';
-import 'package:lottie/lottie.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -14,7 +13,6 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     Future.delayed(const Duration(seconds: 2), () {
       Navigator.of(context).pushReplacement(

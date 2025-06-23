@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:jaspr/pallete.dart';
-import 'package:jaspr/screens/chat_screen.dart';
 import 'package:jaspr/screens/splash_screen.dart';
 
 void main() async {

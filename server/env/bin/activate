@@ -39,14 +39,14 @@ deactivate nondestructive
 if [ "${OSTYPE:-}" = "cygwin" ] || [ "${OSTYPE:-}" = "msys" ] ; then
     # transform D:\path\to\venv to /d/path/to/venv on MSYS
     # and to /cygdrive/d/path/to/venv on Cygwin
-    export VIRTUAL_ENV=$(cygpath "/home/kar/Kart/Projects/Flutter Projects/jaspr/server/env")
+    export VIRTUAL_ENV=$(cygpath /home/kar/Kart/Projects/Flutter/jaspr/server/env)
 else
     # use the path as-is
-    export VIRTUAL_ENV="/home/kar/Kart/Projects/Flutter Projects/jaspr/server/env"
+    export VIRTUAL_ENV=/home/kar/Kart/Projects/Flutter/jaspr/server/env
 fi
 
 _OLD_VIRTUAL_PATH="$PATH"
-PATH="$VIRTUAL_ENV/bin:$PATH"
+PATH="$VIRTUAL_ENV/"bin":$PATH"
 export PATH
 
 # unset PYTHONHOME if set
@@ -59,9 +59,9 @@ fi
 
 if [ -z "${VIRTUAL_ENV_DISABLE_PROMPT:-}" ] ; then
     _OLD_VIRTUAL_PS1="${PS1:-}"
-    PS1="(env) ${PS1:-}"
+    PS1='(env) '"${PS1:-}"
     export PS1
-    VIRTUAL_ENV_PROMPT="(env) "
+    VIRTUAL_ENV_PROMPT='(env) '
     export VIRTUAL_ENV_PROMPT
 fi
 

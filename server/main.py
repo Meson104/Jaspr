@@ -2,14 +2,23 @@
 import asyncio
 from time import sleep
 from fastapi import FastAPI, WebSocket
-
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic_models.chat_body import ChatBody
 from services.llm_service import LLMService
 from services.similarity_sortion import SimilaritySortion
 from services.search_service import SearchService
-
+from config import Settings
 
 app = FastAPI()
+settings = Settings()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[f"{settings.SERVER_URI}"],  
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 search_service = SearchService()
 sort_sources = SimilaritySortion()

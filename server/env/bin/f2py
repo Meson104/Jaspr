@@ -1,6 +1,4 @@
-#!/bin/sh
-'''exec' "/home/kar/Kart/Projects/Flutter Projects/jaspr/server/env/bin/python3" "$0" "$@"
-' '''
+#!/home/kar/Kart/Projects/Flutter/jaspr/server/env/bin/python3.12
 # -*- coding: utf-8 -*-
 import re
 import sys
