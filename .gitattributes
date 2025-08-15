@@ -1,14 +1,31 @@
-# Ignore platform-specific native code for language stats
-android/** linguist-vendored
-ios/** linguist-vendored
-macos/** linguist-vendored
-windows/** linguist-vendored
-linux/** linguist-vendored
+# =========================================
+# Jaspr Project - GitHub Linguist Overrides
+# =========================================
 
-# Ignore generated code
-*.g.dart linguist-generated
-*.m linguist-vendored
-*.h linguist-vendored
-*.cpp linguist-vendored
-*.c linguist-vendored
-*.cc linguist-vendored
+# --- Flutter platform boilerplate ---
+frontend/android/** linguist-vendored
+frontend/ios/** linguist-vendored
+frontend/macos/** linguist-vendored
+frontend/windows/** linguist-vendored
+frontend/linux/** linguist-vendored
+
+# Ignore CMake and native source files in frontend
+frontend/**/*.cmake linguist-vendored
+frontend/**/*.cpp linguist-vendored
+frontend/**/*.cc linguist-vendored
+frontend/**/*.c linguist-vendored
+frontend/**/*.h linguist-vendored
+frontend/**/*.hpp linguist-vendored
+frontend/**/*.kt linguist-vendored
+frontend/**/*.swift linguist-vendored
+frontend/**/*.m linguist-vendored
+frontend/**/*.mm linguist-vendored
+
+# Ignore generated Dart files
+frontend/**/*.g.dart linguist-generated
+
+# --- Backend ---
+# Keep backend code counted normally
+# But ignore .env and sensitive files
+backend/.env export-ignore
+backend/.env.* export-ignore
