@@ -1,0 +1,14 @@
+# Ignore platform-specific native code for language stats
+android/** linguist-vendored
+ios/** linguist-vendored
+macos/** linguist-vendored
+windows/** linguist-vendored
+linux/** linguist-vendored
+
+# Ignore generated code
+*.g.dart linguist-generated
+*.m linguist-vendored
+*.h linguist-vendored
+*.cpp linguist-vendored
+*.c linguist-vendored
+*.cc linguist-vendored
