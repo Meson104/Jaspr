@@ -15,13 +15,13 @@ It bridges a **Flutter frontend** and **FastAPI backend** with WebSocket streami
 
 ## ✨ Features
 
-🔎 **Retrieval-Augmented Generation (RAG):** Combines search + LLMs for accurate, grounded responses.
-🌐 **Tavily API Integration:** Retrieves high-quality URLs & knowledge sources.
-📄 **Trafalatura HTML Parsing:** Extracts clean text from web pages.
-🧠 **Sentence Transformers (all-MiniLM-L6-v2):** Embeddings + cosine similarity search for semantic retrieval.
-🤖 **Gemini API:** Generates context-rich answers with sources.
-⚡ **WebSockets:** Delivers streaming responses in real-time.
-📱 **Cross-platform Flutter Frontend:** Modern UI with smooth interactions.
+- 🔎 **Retrieval-Augmented Generation (RAG):** Combines search + LLMs for accurate, grounded responses.
+- 🌐 **Tavily API Integration:** Retrieves high-quality URLs & knowledge sources.
+- 📄 **Trafalatura HTML Parsing:** Extracts clean text from web pages.
+- 🧠 **Sentence Transformers (all-MiniLM-L6-v2):** Embeddings + cosine similarity search for semantic retrieval.
+- 🤖 **Gemini API:** Generates context-rich answers with sources.
+- ⚡ **WebSockets:** Delivers streaming responses in real-time.
+- 📱 **Cross-platform Flutter Frontend:** Modern UI with smooth interactions.
 
 ---
 
