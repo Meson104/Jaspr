@@ -83,7 +83,7 @@ Here's how you can quickly set it up and run the backend (FastAPI) as well as th
 5. All set :
    If things are good, the backend should now be running at [text](http://127.0.0.1:8000)
 
-### 🔹 Frontend (FastAPI)
+### 🔹 Frontend (Flutter)
 
 1. cd into the frontend directory
 
