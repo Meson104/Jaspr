@@ -31,7 +31,7 @@ It bridges a **Flutter frontend** and **FastAPI backend** with WebSocket streami
 - **Backend:** FastAPI + WebSockets
 - **APIs:** Tavily API, Gemini API
 - **NLP:** Sentence Transformers (all-MiniLM-L6-v2)
-- **Parsing:** Trafalatura
+- **Parsing:** Trafilatura
 
 ---
 
@@ -47,3 +47,57 @@ flowchart TD
     B -->|Generate| F[Gemini API]
     F -->|Stream| A
 ```
+
+## Quick Start
+
+Here's how you can quickly set it up and run the backend (FastAPI) as well as the frontend (Flutter).
+
+---
+
+### 🔹 Backend (FastAPI)
+
+1. Once you clone , cd to the server directory :
+   ```bash
+   cd server
+   ```
+2. In the server directory, create a python virtual environment (Venv). Recommending this to avoid version issues and to make sure one has all the dependencies.
+
+   ```bash
+   python -m venv venv
+   source venv/bin/activate   # Linux/Mac
+   venv\Scripts\activate      # Windows
+   ```
+
+3. Install dependencies from requirements.txt :
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Start the server :
+
+   ```bash
+   uvicorn main:app -reload
+   ```
+
+5. All set :
+   If things are good, the backend should now be running at [text](http://127.0.0.1:8000)
+
+### 🔹 Frontend (FastAPI)
+
+1. cd into the frontend directory
+
+   ```bash
+   cd frontend
+   ```
+
+2. Install flutter dependencies :
+
+   ```bash
+   flutter pub get
+   ```
+
+3. Run the flutter app
+   ```bash
+   flutter run
+   ```
